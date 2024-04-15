@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:show, :edit, :update]
   end
+
+  devise_scope :end_user do
+    post 'end_users/guest_sign_in', to: 'public/sessions#guest_sign_in'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

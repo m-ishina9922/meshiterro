@@ -27,6 +27,7 @@
        </div>
         <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "inputPassword", placeholder: "パスワード" %>
      </div>
+     <%= link_to 'ゲストログイン', end_users_guest_sign_in_path, class: "nav-link", method: :post  do %>
       <%= f.submit "サインイン", class: "btn btn-lg btn-block btn-info mt-5" %>
      <% end %>
    </div>

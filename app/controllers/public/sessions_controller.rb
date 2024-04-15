@@ -19,6 +19,11 @@ class Public::SessionsController < Devise::SessionsController
 
   end
 
+  def guest_sign_in
+    end_user = EndUser.guest
+    sign_in end_user
+    rediect_to root_path, notice: 'ゲストユーザーとしてログインしました'
+  end
 
   # GET /resource/sign_in
   # def new
